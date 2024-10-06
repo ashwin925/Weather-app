@@ -7,6 +7,7 @@ import './App.css';
 import Sidebar from './Sidebar/sidenotch'
 import Barchart from './components/barchart';
 import Linechart from './components/linechart';
+import Polarchart from './components/polarchart';
  
 function GfGWeatherApp() {
     const [input, setInput] = useState('');
@@ -139,6 +140,9 @@ function GfGWeatherApp() {
 				</div>
 				<div>
 					<Linechart />
+				</div>
+                <div>
+					<Polarchart />
 				</div>
 			</div>
     );
