@@ -20,11 +20,11 @@ export default function Linechart() {
         datasets: [
           {
             label: "Line Chart",
-            data: [65, 59, 80, 81, 56, 55, 40],
-            fill: false,
-            borderColor: 'rgb(75, 192, 192)',
-            tension: 0.1,
-            borderWidth: 1,
+            data: [65, 59, 80, 81, 56], // Data length should match the number of labels
+            fill: false, // No filling under the line
+            borderColor: 'rgb(75, 192, 192)', // Line color
+            tension: 0.1, // Smooth curve
+            borderWidth: 1, // Line thickness
           },
         ],
       },
@@ -33,12 +33,19 @@ export default function Linechart() {
         maintainAspectRatio: false, // Let the container control size
         scales: {
           y: {
-            beginAtZero: true,
+            beginAtZero: true, // Start Y-axis at 0
           },
         },
       },
     });
-  }, []);
+
+    // Cleanup function to destroy chart on unmount
+    return () => {
+      if (chartInstance.current) {
+        chartInstance.current.destroy();
+      }
+    };
+  }, []); // Empty dependency array ensures this runs once after mount
 
   return (
     <div className="container mx-auto p-4 bg-white shadow-md rounded-lg"> {/* Outer container */}
