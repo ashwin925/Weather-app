@@ -13,10 +13,10 @@ function App(){
     <Router>
       <Routes>
         <Route path="/" element={<GfGWeatherApp />} /> 
-        <Route path="/projects" element={<Sidebar />} /> 
-        <Route path="/skills" element={<Barchart />} /> 
-        <Route path="/resume" element={<Linechart />} /> 
-        <Route path="/contact" element={<Polarchart />} /> 
+        <Route path="/sidenotch" element={<Sidebar />} /> 
+        <Route path="/barchart" element={<Barchart />} /> 
+        <Route path="/linechart" element={<Linechart />} /> 
+        <Route path="/polarchart" element={<Polarchart />} /> 
       </Routes>
     </Router>
   );
